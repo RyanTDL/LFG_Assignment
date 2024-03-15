@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react';
+import { SetStateAction, useState } from 'react';
 import ScrollableList from './scrollableList';
 
 interface searchBarProps {
@@ -10,12 +10,11 @@ export default function SearchBar(params : searchBarProps) {
     const [name, setName] = useState('');
     const [filteredPokemon, setfilteredPokemon] = useState(params.pokemonData);
 
-    const handleInputChange = (e) => {
+    const handleInputChange = (e: { target: { value: SetStateAction<string>; }; }) => {
         setName(e.target.value);
     };
 
     const handleButtonClick = () => {
-        // console.log(name);
         const filtered = params.pokemonData.filter((pokemon) => pokemon.name.includes(name));
         setfilteredPokemon(filtered);
         console.log(filtered);

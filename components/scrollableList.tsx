@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/node_modules/next/link";
 
 interface scrollableListProps {
     pokemonData : Array<{ name: string, url : string}>;
@@ -7,9 +7,6 @@ interface scrollableListProps {
 export default function ScrollableList(
     props: scrollableListProps
 ) {
-    const handleClick = (pokemonName : string) => {
-        console.log(pokemonName);
-    }
 
     return (
         <div className="w-full h-full overflow-y-auto flex flex-col items-center">
