@@ -1,13 +1,13 @@
-import AddOrDeleteButton from "@/components/addOrDeleteButton";
 import NavBar from "@/components/navBar";
 import Image from "@/node_modules/next/image";
 import Link from "@/node_modules/next/link";
+import AddButton from "@/components/addButton";
 
-// interface pokemonDisplayProps {
-//     pokemonID : string;
-// }
+interface pokemonDisplayProps {
+    pokemonID : string;
+}
 
-    export default async function PokemonDisplay({params}) {
+export default async function PokemonDisplay({params}) {
     const pokemonName = params.pokemonID;
     async function getOnePokemon() {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
@@ -18,20 +18,20 @@ import Link from "@/node_modules/next/link";
 
     return (
             <main className="container mx-auto h-screen flex flex-col justify-around items-center">
-                <div className="fixed top-0 left-0 w-full h-1/6 border-4 border-red-300">
+                <div className="fixed top-0 left-0 w-full h-1/6">
                     <NavBar />
                 </div>
-                <div className="w-full h-5/6 mt-44 flex flex-col justify-center items-center border-8 border-blue-400 gap-4">
+                <div className="w-full h-5/6 mt-44 flex flex-col justify-center items-center gap-4">
                     <p className="font-mono font-bold text-4xl">{pokemonName}</p>
                     <Image
                         src = {imagePath}
                         width={500}
                         height={500}
                         alt = {`Picture of ${pokemonName}`}
-                        className="border-8 border-blue-300 rounded-lg"
+                        className="border-8 border-indigo-500 rounded-lg"
                     />
                     <div className="w-1/3 text-3xl">
-                        <AddOrDeleteButton add={true} pokemonName={pokemonName}/>
+                        <AddButton pokemonName={pokemonName}/>
                     </div>
                     <Link href={'/'} className="font-mono text-2xl italic underline">
                         Back

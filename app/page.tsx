@@ -11,12 +11,12 @@ export default async function Home() {
     const pokemonData = data.results;
 
     return (
-        <main className="container mx-auto h-screen p-4 flex flex-col justify-around items-center border-2">
-            <div className="fixed top-0 left-0 w-full h-1/6 border-4 border-red-300">
+        <main className="container mx-auto h-screen flex flex-col p-4">
+            <div className="fixed top-0 left-0 w-full h-1/6">
                 <NavBar />
             </div>
-            <div className="flex flex-col w-full h-5/6 mt-44 justify-around items-center border-8 border-blue-400 gap-4">
-                <div className="w-full h-full p-4 border-4 rounded-3xl">
+            <div className="flex flex-col w-full h-5/6 mt-44 justify-around items-center gap-4">
+                <div className="w-full h-full p-4 border-4 border-indigo-500 rounded-3xl">
                     <SearchBar pokemonData={pokemonData} />
                 </div>
             </div>
