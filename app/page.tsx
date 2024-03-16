@@ -2,7 +2,7 @@ import SearchBar from "@/components/searchBar";
 import NavBar from "@/components/navBar";
 
 async function getAllPokemon() {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=20');
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon/?limit=40');
     return response.json();
 }
 
