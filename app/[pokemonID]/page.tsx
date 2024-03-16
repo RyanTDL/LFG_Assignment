@@ -4,10 +4,12 @@ import Link from "@/node_modules/next/link";
 import AddButton from "@/components/addButton";
 
 interface pokemonDisplayProps {
-    pokemonID : string;
+    params : {
+        pokemonID : string;
+    }
 }
 
-export default async function PokemonDisplay({params}) {
+export default async function PokemonDisplay({params} : pokemonDisplayProps) {
     const pokemonName = params.pokemonID;
     async function getOnePokemon() {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
