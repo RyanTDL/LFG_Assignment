@@ -2,29 +2,29 @@
 import { createContext, useState } from 'react';
 
 export const TeamContext = createContext({
-    team: [],
-    addTeam: () => {},
-    deleteTeam: () => {}
+    team: [] as string[],
+    addTeam: (newPokemon: string) => {},
+    deleteTeam: (pokemonToRemove: string) => {}
 });
 
 export default function TeamProvider({ children }) {
-    let [team, setTeam] = useState([]);
+    let [team, setTeam] = useState<string[]>([]);
 
-    const addPokemon = () => {
+    const addPokemon = (newPokemon: string) => {
         if (team.length >= 6) {
             alert('You can only have 6 pokemons in your team');
             return;
         };
-        setTeam(prevTeam => [...prevTeam, 'pikachu']);
+        setTeam(prevTeam => [...prevTeam, newPokemon]);
     }
 
-    // const deletePokemon = (removedPokemon : String) => {
-    //     setTeam(team.filter(pokemon => pokemon !== removedPokemon));
-    // }
+    const deletePokemon = (removedPokemon : string) => {
+        setTeam(team.filter(pokemon => pokemon !== removedPokemon));
+    }
 
     return (
         // <TeamContext.Provider value={{ team, addTeam: addPokemon, deleteTeam: deletePokemon}}>
-        <TeamContext.Provider value={{ team, addTeam: addPokemon}}>
+        <TeamContext.Provider value={{ team, addTeam: addPokemon, deleteTeam: deletePokemon}}>
             {children}
         </TeamContext.Provider>
     );
