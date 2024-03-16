@@ -1,5 +1,5 @@
 'use client'
-import { createContext, useState } from 'react';
+import { createContext, useState, ReactNode } from 'react';
 
 export const TeamContext = createContext({
     team: [] as string[],
@@ -7,7 +7,11 @@ export const TeamContext = createContext({
     deleteTeam: (pokemonToRemove: string) => {}
 });
 
-export default function TeamProvider({ children }) {
+interface TeamProviderProps {
+    children: ReactNode;
+}
+
+export default function TeamProvider({ children }: TeamProviderProps) {
     let [team, setTeam] = useState<string[]>([]);
 
     const addPokemon = (newPokemon: string) => {
