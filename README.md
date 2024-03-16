@@ -51,7 +51,3 @@ To get started with this project:
 ## Deployment
 
 The application is deployed on Vercel, which provides a seamless deployment experience for Next.js applications.
-
-### Live Demo
-
-You can view the live deployment of this application at [lfg-assignment-i64n6mxa8-ryans-projects-1183f93c.vercel.app](#).
