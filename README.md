@@ -47,3 +47,11 @@ To get started with this project:
 - **Fetching Data via API**: The application should fetch all 1292 Pokémon data in one request. However, a limit of 40 was set to the API call, as it was believed to be a sufficient proof-of-concept 
 - **Removing Pokemon**: The assumption was made that all Pokémon added to the team would be unique, and not have the same name. Though adding multiple Pokémon of the same name is not disabled, removing a Pokémon from the team will result in all Pokémon of the same name being removed.
 - **Design Decisions**: The focus is on functionality over style; however, basic styling is applied for a cleaner look.
+
+## Deployment
+
+The application is deployed on Vercel, which provides a seamless deployment experience for Next.js applications.
+
+### Live Demo
+
+You can view the live deployment of this application at [lfg-assignment-i64n6mxa8-ryans-projects-1183f93c.vercel.app](#).
