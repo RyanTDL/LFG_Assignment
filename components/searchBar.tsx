@@ -29,7 +29,7 @@ export default function SearchBar(params : searchBarProps) {
                         type="text"
                         value={name}
                         onChange={handleInputChange}
-                        className="w-4/5 h-full border-2 border-gray-200 p-2"
+                        className="w-4/5 h-full text-black border-2 border-gray-200 p-2"
                         placeholder="Enter your pokemon name here..."
                     />
                     <button
